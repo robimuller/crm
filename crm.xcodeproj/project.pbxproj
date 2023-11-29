@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0118B762B173D8300E6C3FB /* crmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118B752B173D8300E6C3FB /* crmApp.swift */; };
+		D0118B782B173D8300E6C3FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118B772B173D8300E6C3FB /* ContentView.swift */; };
+		D0118B7A2B173D8400E6C3FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0118B792B173D8400E6C3FB /* Assets.xcassets */; };
+		D0118B7D2B173D8400E6C3FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0118B7C2B173D8400E6C3FB /* Preview Assets.xcassets */; };
+		D0118B882B173D8400E6C3FB /* crmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118B872B173D8400E6C3FB /* crmTests.swift */; };
+		D0118B922B173D8400E6C3FB /* crmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118B912B173D8400E6C3FB /* crmUITests.swift */; };
+		D0118B942B173D8400E6C3FB /* crmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118B932B173D8400E6C3FB /* crmUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0118B842B173D8400E6C3FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0118B6A2B173D8300E6C3FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0118B712B173D8300E6C3FB;
+			remoteInfo = crm;
+		};
+		D0118B8E2B173D8400E6C3FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0118B6A2B173D8300E6C3FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0118B712B173D8300E6C3FB;
+			remoteInfo = crm;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D0118B722B173D8300E6C3FB /* crm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0118B752B173D8300E6C3FB /* crmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crmApp.swift; sourceTree = "<group>"; };
+		D0118B772B173D8300E6C3FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D0118B792B173D8400E6C3FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0118B7C2B173D8400E6C3FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D0118B7E2B173D8400E6C3FB /* crm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = crm.entitlements; sourceTree = "<group>"; };
+		D0118B832B173D8400E6C3FB /* crmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = crmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0118B872B173D8400E6C3FB /* crmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crmTests.swift; sourceTree = "<group>"; };
+		D0118B8D2B173D8400E6C3FB /* crmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = crmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0118B912B173D8400E6C3FB /* crmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crmUITests.swift; sourceTree = "<group>"; };
+		D0118B932B173D8400E6C3FB /* crmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crmUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0118B6F2B173D8300E6C3FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0118B802B173D8400E6C3FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0118B8A2B173D8400E6C3FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0118B692B173D8300E6C3FB = {
+			isa = PBXGroup;
+			children = (
+				D0118B742B173D8300E6C3FB /* crm */,
+				D0118B862B173D8400E6C3FB /* crmTests */,
+				D0118B902B173D8400E6C3FB /* crmUITests */,
+				D0118B732B173D8300E6C3FB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0118B732B173D8300E6C3FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0118B722B173D8300E6C3FB /* crm.app */,
+				D0118B832B173D8400E6C3FB /* crmTests.xctest */,
+				D0118B8D2B173D8400E6C3FB /* crmUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0118B742B173D8300E6C3FB /* crm */ = {
+			isa = PBXGroup;
+			children = (
+				D0118B752B173D8300E6C3FB /* crmApp.swift */,
+				D0118B772B173D8300E6C3FB /* ContentView.swift */,
+				D0118B792B173D8400E6C3FB /* Assets.xcassets */,
+				D0118B7E2B173D8400E6C3FB /* crm.entitlements */,
+				D0118B7B2B173D8400E6C3FB /* Preview Content */,
+			);
+			path = crm;
+			sourceTree = "<group>";
+		};
+		D0118B7B2B173D8400E6C3FB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D0118B7C2B173D8400E6C3FB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D0118B862B173D8400E6C3FB /* crmTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0118B872B173D8400E6C3FB /* crmTests.swift */,
+			);
+			path = crmTests;
+			sourceTree = "<group>";
+		};
+		D0118B902B173D8400E6C3FB /* crmUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D0118B912B173D8400E6C3FB /* crmUITests.swift */,
+				D0118B932B173D8400E6C3FB /* crmUITestsLaunchTests.swift */,
+			);
+			path = crmUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0118B712B173D8300E6C3FB /* crm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0118B972B173D8400E6C3FB /* Build configuration list for PBXNativeTarget "crm" */;
+			buildPhases = (
+				D0118B6E2B173D8300E6C3FB /* Sources */,
+				D0118B6F2B173D8300E6C3FB /* Frameworks */,
+				D0118B702B173D8300E6C3FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = crm;
+			productName = crm;
+			productReference = D0118B722B173D8300E6C3FB /* crm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0118B822B173D8400E6C3FB /* crmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0118B9A2B173D8400E6C3FB /* Build configuration list for PBXNativeTarget "crmTests" */;
+			buildPhases = (
+				D0118B7F2B173D8400E6C3FB /* Sources */,
+				D0118B802B173D8400E6C3FB /* Frameworks */,
+				D0118B812B173D8400E6C3FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0118B852B173D8400E6C3FB /* PBXTargetDependency */,
+			);
+			name = crmTests;
+			productName = crmTests;
+			productReference = D0118B832B173D8400E6C3FB /* crmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D0118B8C2B173D8400E6C3FB /* crmUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0118B9D2B173D8400E6C3FB /* Build configuration list for PBXNativeTarget "crmUITests" */;
+			buildPhases = (
+				D0118B892B173D8400E6C3FB /* Sources */,
+				D0118B8A2B173D8400E6C3FB /* Frameworks */,
+				D0118B8B2B173D8400E6C3FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0118B8F2B173D8400E6C3FB /* PBXTargetDependency */,
+			);
+			name = crmUITests;
+			productName = crmUITests;
+			productReference = D0118B8D2B173D8400E6C3FB /* crmUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0118B6A2B173D8300E6C3FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					D0118B712B173D8300E6C3FB = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					D0118B822B173D8400E6C3FB = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = D0118B712B173D8300E6C3FB;
+					};
+					D0118B8C2B173D8400E6C3FB = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = D0118B712B173D8300E6C3FB;
+					};
+				};
+			};
+			buildConfigurationList = D0118B6D2B173D8300E6C3FB /* Build configuration list for PBXProject "crm" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0118B692B173D8300E6C3FB;
+			productRefGroup = D0118B732B173D8300E6C3FB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0118B712B173D8300E6C3FB /* crm */,
+				D0118B822B173D8400E6C3FB /* crmTests */,
+				D0118B8C2B173D8400E6C3FB /* crmUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0118B702B173D8300E6C3FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0118B7D2B173D8400E6C3FB /* Preview Assets.xcassets in Resources */,
+				D0118B7A2B173D8400E6C3FB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0118B812B173D8400E6C3FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0118B8B2B173D8400E6C3FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0118B6E2B173D8300E6C3FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0118B782B173D8300E6C3FB /* ContentView.swift in Sources */,
+				D0118B762B173D8300E6C3FB /* crmApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0118B7F2B173D8400E6C3FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0118B882B173D8400E6C3FB /* crmTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0118B892B173D8400E6C3FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0118B922B173D8400E6C3FB /* crmUITests.swift in Sources */,
+				D0118B942B173D8400E6C3FB /* crmUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0118B852B173D8400E6C3FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0118B712B173D8300E6C3FB /* crm */;
+			targetProxy = D0118B842B173D8400E6C3FB /* PBXContainerItemProxy */;
+		};
+		D0118B8F2B173D8400E6C3FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0118B712B173D8300E6C3FB /* crm */;
+			targetProxy = D0118B8E2B173D8400E6C3FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D0118B952B173D8400E6C3FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D0118B962B173D8400E6C3FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		D0118B982B173D8400E6C3FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = crm/crm.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"crm/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = crm.crm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D0118B992B173D8400E6C3FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = crm/crm.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"crm/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = crm.crm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D0118B9B2B173D8400E6C3FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = crm.crmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crm.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/crm";
+			};
+			name = Debug;
+		};
+		D0118B9C2B173D8400E6C3FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = crm.crmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crm.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/crm";
+			};
+			name = Release;
+		};
+		D0118B9E2B173D8400E6C3FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = crm.crmUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = crm;
+			};
+			name = Debug;
+		};
+		D0118B9F2B173D8400E6C3FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = crm.crmUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = crm;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0118B6D2B173D8300E6C3FB /* Build configuration list for PBXProject "crm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0118B952B173D8400E6C3FB /* Debug */,
+				D0118B962B173D8400E6C3FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0118B972B173D8400E6C3FB /* Build configuration list for PBXNativeTarget "crm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0118B982B173D8400E6C3FB /* Debug */,
+				D0118B992B173D8400E6C3FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0118B9A2B173D8400E6C3FB /* Build configuration list for PBXNativeTarget "crmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0118B9B2B173D8400E6C3FB /* Debug */,
+				D0118B9C2B173D8400E6C3FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0118B9D2B173D8400E6C3FB /* Build configuration list for PBXNativeTarget "crmUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0118B9E2B173D8400E6C3FB /* Debug */,
+				D0118B9F2B173D8400E6C3FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0118B6A2B173D8300E6C3FB /* Project object */;
+}
