@@ -3,15 +3,14 @@ import CoreData
 import AppKit
 import UniformTypeIdentifiers
 
-
-
 struct ScaleTicketView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(entity: ScaleTicketEntity.entity(), sortDescriptors: []) var savedDocuments: FetchedResults<ScaleTicketEntity>
     @State private var documents: [ScaleTicket] = []
-    // Bindings from ContentView
     @Binding var selectedScaleTicket: ScaleTicket?
-       var onSelect: (ScaleTicket) -> Void
+    @State private var selectedDocument: ScaleTicket?
+
+    var onSelect: (ScaleTicket) -> Void
 
     var body: some View {
         VStack {
@@ -22,7 +21,7 @@ struct ScaleTicketView: View {
                             let newDocument = ScaleTicket(name: url.lastPathComponent, uploadDate: "Date", fileFormat: url.pathExtension, fileSize: "Size")
                             self.documents.append(newDocument)
                             _ = newDocument.toEntity(context: self.managedObjectContext)
-
+                            
                             do {
                                 try self.managedObjectContext.save()
                             } catch {
@@ -30,44 +29,52 @@ struct ScaleTicketView: View {
                             }
                         }
                     }
-                }) {
+                }){
                     Image(systemName: "plus.circle.fill")
                         .resizable()
                         .frame(width: 24, height: 24)
-                    
                 }
                 Text("Mérlegjegy feltöltése")
             }
             .padding()
-
-            HStack {
-                            Text("Megnevezés").bold() // Name
-                            Spacer()
-                            Text("Feltöltés dátuma").bold() // Upload Date
-                            Spacer()
-                            Text("Fájltípus").bold() // File Format
-                            Spacer()
-                            Text("Fájlméret").bold() // File Size
-                        }.padding(.horizontal)
-
-                        List(documents) { document in
-                            HStack {
-                                Text(document.name)
-                                Spacer()
-                                Text(document.uploadDate)
-                                Spacer()
-                                Text(document.fileFormat)
-                                Spacer()
-                                Text(document.fileSize)
-                            }
-                            .onTapGesture {
-                                                onSelect(document)
-                                            }
+            
+            // Define headers
+                        HStack {
+                            Text("Megnevezés").bold().frame(minWidth: 150, maxWidth: .infinity, alignment: .leading)
+                            Text("Feltöltés dátuma").bold().frame(minWidth: 150, maxWidth: .infinity, alignment: .leading)
+                            Text("Fájltípus").bold().frame(minWidth: 100, maxWidth: .infinity, alignment: .leading)
+                            Text("Fájlméret").bold().frame(minWidth: 100, maxWidth: .infinity, alignment: .trailing)
                         }
-                        .listStyle(PlainListStyle())
+                        .padding(.horizontal)
+                        .padding(.vertical, 10)
+                        .background(Color.gray.opacity(0.2))
 
-                        Spacer()
+            // Scrollable list of documents
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .leading, spacing: 0) {
+                    ForEach(documents, id: \.self) { document in
+                        HStack {
+                            Text(document.name).frame(minWidth: 150, maxWidth: .infinity, alignment: .leading)
+                            Text(document.uploadDate).frame(minWidth: 150, maxWidth: .infinity, alignment: .leading)
+                            Text(document.fileFormat).frame(minWidth: 100, maxWidth: .infinity, alignment: .leading)
+                            Text(document.fileSize).frame(minWidth: 100, maxWidth: .infinity, alignment: .trailing)
+                        }
+                        .padding(.vertical, 5)
+                        .padding(.horizontal)
+                        .contentShape(Rectangle()) // Makes the entire area tappable
+                        .background(document == selectedDocument ? Color.orange : Color.clear)
+                        .foregroundColor(document == selectedDocument ? Color.black : Color.white)
+                        .onTapGesture {
+                            selectedDocument = document
+                            onSelect(document)
+                        }
                     }
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+        .background(.black.opacity(0.25))
+
                     .onAppear {
                         self.loadSavedDocuments()
                     }
@@ -82,7 +89,7 @@ struct ScaleTicketView: View {
         panel.allowsMultipleSelection = false
         panel.canChooseDirectories = false
         panel.canChooseFiles = true
-        panel.allowedContentTypes = [.png, .jpeg, .pdf, .plainText] // Update as needed
+        panel.allowedContentTypes = [.png, .jpeg, .pdf] // Update as needed
 
         if panel.runModal() == .OK, let url = panel.url {
             let fileManager = FileManager.default
@@ -104,18 +111,38 @@ struct ScaleTicketView: View {
                 print("Error reading file attributes: \(error)")
             }
 
-            let newDocument = ScaleTicket(name: url.lastPathComponent, uploadDate: uploadDateString, fileFormat: url.pathExtension, fileSize: fileSizeString)
-            
-            self.documents.append(newDocument) // Append to documents array
-            _ = newDocument.toEntity(context: self.managedObjectContext) // Save to CoreData
+            // Get the app's documents directory
+            let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+
+            // Destination URL for the file in the app's documents directory
+            let destinationURL = documentsDirectory?.appendingPathComponent(url.lastPathComponent)
 
             do {
-                try self.managedObjectContext.save()
+                // If file already exists at destination, remove it
+                if let destinationURL = destinationURL, fileManager.fileExists(atPath: destinationURL.path) {
+                    try fileManager.removeItem(at: destinationURL)
+                }
+
+                // Copy the file to the app's documents directory
+                try fileManager.copyItem(at: url, to: destinationURL!)
+
+                // Create a new ScaleTicket using the file name from the destination URL
+                let newDocument = ScaleTicket(name: destinationURL!.lastPathComponent, uploadDate: uploadDateString, fileFormat: destinationURL!.pathExtension, fileSize: fileSizeString)
+
+                self.documents.append(newDocument) // Append to documents array
+                _ = newDocument.toEntity(context: self.managedObjectContext) // Save to CoreData
+
+                do {
+                    try self.managedObjectContext.save()
+                } catch {
+                    print("Error saving context: \(error)")
+                }
+
+                completion(destinationURL) // Pass the destination URL
             } catch {
-                print("Error saving context: \(error)")
+                print("Error copying file: \(error)")
+                completion(nil)
             }
-            
-            completion(url)
         } else {
             completion(nil)
         }

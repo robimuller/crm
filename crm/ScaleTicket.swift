@@ -1,6 +1,6 @@
 import CoreData
 
-struct ScaleTicket: Identifiable  {
+struct ScaleTicket: Identifiable, Hashable  {
     var id: UUID
     var name: String
     var uploadDate: String
