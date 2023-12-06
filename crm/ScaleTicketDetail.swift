@@ -1,11 +1,12 @@
 import SwiftUI
 import CoreData
-import AppKit // Import AppKit for NSImage
+import AppKit
 
 struct ScaleTicketDetailView: View {
     let scaleTicket: ScaleTicket
     @Environment(\.managedObjectContext) private var context
     @Binding var isDetailViewVisible: Bool
+    var onDelete: (() -> Void)?
 
     var body: some View {
         VStack {
@@ -15,13 +16,11 @@ struct ScaleTicketDetailView: View {
             Text("File Size: \(scaleTicket.fileSize)")
 
             if scaleTicket.fileFormat.lowercased() == "pdf" {
-                // Display a PDF thumbnail or icon
-                Image(systemName: "doc.fill") // Placeholder for a PDF icon
+                Image(systemName: "doc.fill")
                     .resizable()
                     .scaledToFit()
                     .frame(maxWidth: 300, maxHeight: 300)
             } else {
-                // For image files, display the image
                 if let image = loadImage(from: scaleTicket.name) {
                     Image(nsImage: image)
                         .resizable()
@@ -31,15 +30,49 @@ struct ScaleTicketDetailView: View {
                     Text("Image preview not available")
                 }
             }
+            Button("Open Image File") {
+                           openImageFile()
+                       }
+                       .padding()
+
+            Button("Delete Ticket") {
+                deleteTicket()
+            }
+            .buttonStyle(BorderlessButtonStyle())
+            .foregroundColor(.red)
+            .padding()
 
             Button("Close") {
                 isDetailViewVisible = false
             }
+            .padding()
+        }
+    }
+    
+    private func openImageFile() {
+           guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+           let fileURL = documentsDirectory.appendingPathComponent(scaleTicket.name)
+
+           NSWorkspace.shared.open(fileURL)
+       }
+
+    private func deleteTicket() {
+        let fetchRequest: NSFetchRequest<ScaleTicketEntity> = ScaleTicketEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", scaleTicket.id as CVarArg)
+
+        do {
+            let results = try context.fetch(fetchRequest)
+            if let ticketEntity = results.first {
+                context.delete(ticketEntity)
+                try context.save()
+                onDelete?()
+            }
+        } catch {
+            print("Error deleting scale ticket: \(error)")
         }
     }
 
     private func loadImage(from fileName: String) -> NSImage? {
-        // Assuming file paths are stored in the app's documents directory
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         let filePath = documentsDirectory?.appendingPathComponent(fileName).path
 

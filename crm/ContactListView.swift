@@ -1,5 +1,6 @@
 import SwiftUI
 import CoreData
+import AppKit
 
 struct ContactListView: View {
     @Environment(\.managedObjectContext) private var context
@@ -58,24 +59,25 @@ struct ContactListView: View {
                         .background(RoundedRectangle(cornerRadius: 10).fill(Color.black.opacity(0.25)))
                 }
                 Spacer()
-                Button(action: { showFilterPopover = true }) {
-                                    Image(systemName: "line.horizontal.3.decrease.circle")
-                                        .imageScale(.large)
-                                        .padding()
-                                        .foregroundColor(.blue)
-                                }
-                                .buttonStyle(BorderlessButtonStyle()) // Removes default button styling
-                                .popover(isPresented: $showFilterPopover) {
-                                    FilterView(filterOptions: $filterOptions, onApply: {
-                                        showFilterPopover = false
-                                    }, onCancel: {
-                                        showFilterPopover = false
-                                    })
-                                    .frame(width: 300)
+                            Button(action: { showFilterPopover = true }) {
+                                Image(systemName: "line.horizontal.3.decrease.circle")
+                                    .resizable() // Enable resizing of the image
+                                    .frame(width: 24, height: 24) // Set the frame size to match the plus icon
                                     .padding()
-                                }
+                                    .foregroundColor(.blue)
                             }
-                            .padding([.horizontal, .top])
+                            .buttonStyle(BorderlessButtonStyle()) // Removes default button styling
+                            .popover(isPresented: $showFilterPopover) {
+                                FilterView(filterOptions: $filterOptions, onApply: {
+                                    showFilterPopover = false
+                                }, onCancel: {
+                                    showFilterPopover = false
+                                })
+                                .frame(width: 300)
+                                .padding()
+                            }
+                        }
+                        .padding([.horizontal, .top])
 
             
             // LIST SECTION

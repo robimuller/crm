@@ -30,12 +30,14 @@ struct ContentView: View {
                         .animation(.easeInOut, value: isDetailViewVisible)
                 }
 
-                // ScaleTicket Detail View
                 if selectedView == "ScaleTicket", let selectedTicket = selectedScaleTicket, isScaleTicketDetailViewVisible {
-                    ScaleTicketDetailView(scaleTicket: selectedTicket, isDetailViewVisible: $isScaleTicketDetailViewVisible)
-                        .frame(width: 600)
-                        .transition(.move(edge: .trailing))
-                        .animation(.easeInOut, value: isScaleTicketDetailViewVisible)
+                    ScaleTicketDetailView(scaleTicket: selectedTicket, isDetailViewVisible: $isScaleTicketDetailViewVisible, onDelete: {
+                        // Call the refresh function here
+                        (self.mainContent as? ScaleTicketView)?.refreshData()
+                    })
+                    .frame(width: 600)
+                    .transition(.move(edge: .trailing))
+                    .animation(.easeInOut, value: isScaleTicketDetailViewVisible)
                 }
             }
         }
@@ -51,10 +53,12 @@ struct ContentView: View {
                     isDetailViewVisible = true
                 }
             case "ScaleTicket":
-                            ScaleTicketView(selectedScaleTicket: $selectedScaleTicket) { scaleTicket in
-                                selectedScaleTicket = scaleTicket
-                                isScaleTicketDetailViewVisible = true
-                            }
+                // In ContentView or wherever you define what happens onSelect
+                ScaleTicketView(selectedScaleTicket: $selectedScaleTicket) { scaleTicket in
+                    selectedScaleTicket = scaleTicket
+                    isScaleTicketDetailViewVisible = true
+                }
+
             default:
                 Text("Select an action")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)

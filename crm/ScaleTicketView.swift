@@ -9,35 +9,85 @@ struct ScaleTicketView: View {
     @State private var documents: [ScaleTicket] = []
     @Binding var selectedScaleTicket: ScaleTicket?
     @State private var selectedDocument: ScaleTicket?
+    
+    @State private var searchText = ""
+    @State private var sortingOption: SortingOption = .nameAscending
 
     var onSelect: (ScaleTicket) -> Void
+    
+    // Computed property to filter and sort documents
+        private var filteredAndSortedDocuments: [ScaleTicket] {
+            var filteredDocuments = searchText.isEmpty ? documents : documents.filter {
+                $0.name.localizedCaseInsensitiveContains(searchText)
+            }
+
+            switch sortingOption {
+            case .nameAscending:
+                filteredDocuments.sort { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+            case .nameDescending:
+                filteredDocuments.sort { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedDescending }
+            // Add other cases for different sorting options
+            }
+
+            return filteredDocuments
+        }
+
+        enum SortingOption {
+            case nameAscending, nameDescending
+            // Add other sorting options as needed
+        }
 
     var body: some View {
         VStack {
+            // Search bar
             HStack {
-                Button(action: {
-                    pickFile { url in
-                        if let url = url {
-                            let newDocument = ScaleTicket(name: url.lastPathComponent, uploadDate: "Date", fileFormat: url.pathExtension, fileSize: "Size")
-                            self.documents.append(newDocument)
-                            _ = newDocument.toEntity(context: self.managedObjectContext)
-                            
-                            do {
-                                try self.managedObjectContext.save()
-                            } catch {
-                                print("Error saving context: \(error)")
-                            }
+                ZStack(alignment: .leading) {
+                    if searchText.isEmpty {
+                        HStack {
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(.white)
+                                .padding(.leading, 15)
+                            Text("Keresés ...")
+                                .foregroundColor(.gray)
+                            Spacer()
                         }
                     }
-                }){
-                    Image(systemName: "plus.circle.fill")
-                        .resizable()
-                        .frame(width: 24, height: 24)
+                    TextField("", text: $searchText)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .padding(15)
+                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.black.opacity(0.25)))
                 }
-                Text("Mérlegjegy feltöltése")
-            }
-            .padding()
-            
+                
+
+                    
+                    Spacer()  // Add a spacer to push the button to the end of the HStack
+
+                    Button(action: {
+                        pickFile { url in
+                            if let url = url {
+                                let newDocument = ScaleTicket(name: url.lastPathComponent, uploadDate: "Date", fileFormat: url.pathExtension, fileSize: "Size")
+                                self.documents.append(newDocument)
+                                _ = newDocument.toEntity(context: self.managedObjectContext)
+                                
+                                do {
+                                    try self.managedObjectContext.save()
+                                } catch {
+                                    print("Error saving context: \(error)")
+                                }
+                            }
+                        }
+                    }){
+                        Image(systemName: "plus.circle.fill")
+                                            .resizable()
+                                            .frame(width: 24, height: 24)
+                                            .foregroundColor(.blue)
+                                            .padding()
+
+                                    }
+                                    .buttonStyle(PlainButtonStyle())  // Apply the plain button style
+                                }
+                                .padding([.horizontal, .top])  // Apply padding similar to the second snippet
+                                    
             // Define headers
                         HStack {
                             Text("Megnevezés").bold().frame(minWidth: 150, maxWidth: .infinity, alignment: .leading)
@@ -52,7 +102,7 @@ struct ScaleTicketView: View {
             // Scrollable list of documents
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 0) {
-                    ForEach(documents, id: \.self) { document in
+                    ForEach(filteredAndSortedDocuments, id: \.self) { document in
                         HStack {
                             Text(document.name).frame(minWidth: 150, maxWidth: .infinity, alignment: .leading)
                             Text(document.uploadDate).frame(minWidth: 150, maxWidth: .infinity, alignment: .leading)
@@ -64,10 +114,13 @@ struct ScaleTicketView: View {
                         .contentShape(Rectangle()) // Makes the entire area tappable
                         .background(document == selectedDocument ? Color.orange : Color.clear)
                         .foregroundColor(document == selectedDocument ? Color.black : Color.white)
+                        // In ScaleTicketView
                         .onTapGesture {
                             selectedDocument = document
+                            selectedScaleTicket = document // Assuming this is how you set the selected ticket
                             onSelect(document)
                         }
+
                     }
                 }
             }
@@ -81,8 +134,14 @@ struct ScaleTicketView: View {
                 }
 
     private func loadSavedDocuments() {
-        self.documents = savedDocuments.map { ScaleTicket(from: $0) }
+            // Load documents from Core Data
+            self.documents = savedDocuments.map { ScaleTicket(from: $0) }
+        }
+    
+    func refreshData() {
+        documents = savedDocuments.map { ScaleTicket(from: $0) }
     }
+
     
     private func pickFile(completion: @escaping (URL?) -> Void) {
         let panel = NSOpenPanel()
@@ -139,6 +198,7 @@ struct ScaleTicketView: View {
                 }
 
                 completion(destinationURL) // Pass the destination URL
+                self.refreshData()
             } catch {
                 print("Error copying file: \(error)")
                 completion(nil)
