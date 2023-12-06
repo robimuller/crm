@@ -6,7 +6,7 @@ struct Contact {
     var firstName: String
     var lastName: String
     var address: String
-    var contactType: String
+    var contactStatus: String
     var phoneNumber: String
     var email: String
     var materialsHandled: String
@@ -20,7 +20,7 @@ struct Contact {
         firstName = entity.firstName ?? ""
         lastName = entity.lastName ?? ""
         address = entity.address ?? ""
-        contactType = entity.contactType ?? ""
+        contactStatus = entity.contactStatus ?? ""
         phoneNumber = entity.phoneNumber ?? ""
         email = entity.email ?? ""
         materialsHandled = entity.materialsHandled ?? ""
@@ -37,7 +37,7 @@ struct Contact {
         entity.firstName = firstName
         entity.lastName = lastName
         entity.address = address
-        entity.contactType = contactType
+        entity.contactStatus = contactStatus
         entity.phoneNumber = phoneNumber
         entity.email = email
         entity.materialsHandled = materialsHandled

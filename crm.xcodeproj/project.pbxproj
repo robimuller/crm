@@ -15,6 +15,9 @@
 		D0118BA32B1741E400E6C3FB /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118BA22B1741E400E6C3FB /* ContactListView.swift */; };
 		D0118BA52B1744D500E6C3FB /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118BA42B1744D500E6C3FB /* Contact.swift */; };
 		D0118BA72B174EF100E6C3FB /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118BA62B174EF100E6C3FB /* ContactDetailView.swift */; };
+		D035C8802B2086E00060BAA7 /* ScaleTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D035C87F2B2086E00060BAA7 /* ScaleTicketView.swift */; };
+		D035C8822B208EC20060BAA7 /* ScaleTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D035C8812B208EC20060BAA7 /* ScaleTicket.swift */; };
+		D04D0DC12B20BB9F00D8ACA8 /* ScaleTicketDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D0DC02B20BB9F00D8ACA8 /* ScaleTicketDetail.swift */; };
 		D0AA94C32B18B9C800367433 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0AA94C12B18B9C800367433 /* Model.xcdatamodeld */; };
 		D0AA94C52B18BA5000367433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA94C42B18BA5000367433 /* AppDelegate.swift */; };
 		D0AA94C72B18D0A500367433 /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA94C62B18D0A500367433 /* PersistanceController.swift */; };
@@ -51,6 +54,9 @@
 		D0118BA22B1741E400E6C3FB /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
 		D0118BA42B1744D500E6C3FB /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		D0118BA62B174EF100E6C3FB /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
+		D035C87F2B2086E00060BAA7 /* ScaleTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleTicketView.swift; sourceTree = "<group>"; };
+		D035C8812B208EC20060BAA7 /* ScaleTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleTicket.swift; sourceTree = "<group>"; };
+		D04D0DC02B20BB9F00D8ACA8 /* ScaleTicketDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleTicketDetail.swift; sourceTree = "<group>"; };
 		D0AA94C22B18B9C800367433 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D0AA94C42B18BA5000367433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0AA94C62B18D0A500367433 /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
@@ -111,6 +117,9 @@
 				D0118BA02B1741BB00E6C3FB /* RegisterContactView.swift */,
 				D0118BA22B1741E400E6C3FB /* ContactListView.swift */,
 				D0AA94C82B19D5EC00367433 /* Sidebar.swift */,
+				D035C87F2B2086E00060BAA7 /* ScaleTicketView.swift */,
+				D04D0DC02B20BB9F00D8ACA8 /* ScaleTicketDetail.swift */,
+				D035C8812B208EC20060BAA7 /* ScaleTicket.swift */,
 				D0118B792B173D8400E6C3FB /* Assets.xcassets */,
 				D0118B7E2B173D8400E6C3FB /* crm.entitlements */,
 				D0118B7B2B173D8400E6C3FB /* Preview Content */,
@@ -258,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D035C8822B208EC20060BAA7 /* ScaleTicket.swift in Sources */,
 				D0AA94C92B19D5EC00367433 /* Sidebar.swift in Sources */,
 				D0118B782B173D8300E6C3FB /* ContentView.swift in Sources */,
 				D0118BA72B174EF100E6C3FB /* ContactDetailView.swift in Sources */,
@@ -266,7 +276,9 @@
 				D0AA94C32B18B9C800367433 /* Model.xcdatamodeld in Sources */,
 				D0118BA32B1741E400E6C3FB /* ContactListView.swift in Sources */,
 				D0118BA52B1744D500E6C3FB /* Contact.swift in Sources */,
+				D035C8802B2086E00060BAA7 /* ScaleTicketView.swift in Sources */,
 				D0118BA12B1741BB00E6C3FB /* RegisterContactView.swift in Sources */,
+				D04D0DC12B20BB9F00D8ACA8 /* ScaleTicketDetail.swift in Sources */,
 				D0AA94C72B18D0A500367433 /* PersistanceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

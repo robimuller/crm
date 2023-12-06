@@ -4,7 +4,7 @@
         <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="buying" optional="YES" attributeType="String"/>
         <attribute name="companyName" optional="YES" attributeType="String"/>
-        <attribute name="contactType" optional="YES" attributeType="String"/>
+        <attribute name="contactStatus" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="firstName" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -12,5 +12,12 @@
         <attribute name="materialsHandled" optional="YES" attributeType="String"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
         <attribute name="selling" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ScaleTicketEntity" representedClassName="ScaleTicketEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="fileFormat" optional="YES" attributeType="String"/>
+        <attribute name="fileSize" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="uploadDate" optional="YES" attributeType="String"/>
     </entity>
 </model>

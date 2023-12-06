@@ -1,5 +1,7 @@
 import SwiftUI
+import CoreData
 
+// Sidebar View
 struct Sidebar: View {
     @Binding var selectedView: String?
     @Binding var showClearConfirmation: Bool
@@ -10,28 +12,22 @@ struct Sidebar: View {
 
             List {
                 SidebarButton(icon: "person.crop.circle.fill", title: "Kontakt Hozzáadása", isSelected: selectedView == "RegisterContact") {
-                    withAnimation {
-                        selectedView = "RegisterContact"
-                    }
+                    selectedView = "RegisterContact"
                 }
                 SidebarButton(icon: "list.bullet.rectangle.portrait.fill", title: "Céglista", isSelected: selectedView == "ListContacts") {
-                    withAnimation {
-                        selectedView = "ListContacts"
-                    }
+                    selectedView = "ListContacts"
+                }
+                SidebarButton(icon: "doc.fill", title: "Mérlegjegyek", isSelected: selectedView == "ScaleTicket") {
+                    selectedView = "ScaleTicket"
                 }
                 SidebarButton(icon: "gear", title: "Settings", isSelected: false) {
-                    withAnimation {
-                        // Handle settings action
-                    }
+                    // Handle settings action
                 }
                 SidebarButton(icon: "trash", title: "Clear Database", isSelected: false) {
-                    withAnimation {
-                        showClearConfirmation = true
-                    }
+                    showClearConfirmation = true
                 }
             }
             .listStyle(SidebarListStyle())
-            .navigationTitle("Actions")
             .alert(isPresented: $showClearConfirmation) {
                 Alert(
                     title: Text("Confirm Clear Database"),
@@ -47,9 +43,7 @@ struct Sidebar: View {
     }
 }
 
-// ... SidebarButton struct ...
-
-
+// SidebarButton View
 struct SidebarButton: View {
     var icon: String
     let title: String
@@ -73,7 +67,6 @@ struct SidebarButton: View {
         .background(isSelected ? Color.white.opacity(0.1) : Color.clear)
         .cornerRadius(8)
         .onTapGesture(perform: action)
-        .animation(.easeInOut, value: isSelected) // Subtle animation for button selection
+        // Removed the animation
     }
 }
-

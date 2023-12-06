@@ -27,7 +27,7 @@ struct ContactListView: View {
                 (filterOptions.firstName && contact.firstName?.lowercased().contains(searchText.lowercased()) ?? false) ||
                 (filterOptions.lastName && contact.lastName?.lowercased().contains(searchText.lowercased()) ?? false) ||
                 (filterOptions.address && contact.address?.lowercased().contains(searchText.lowercased()) ?? false) ||
-                (filterOptions.contactType && contact.contactType?.lowercased().contains(searchText.lowercased()) ?? false) ||
+                (filterOptions.contactStatus && contact.contactStatus?.lowercased().contains(searchText.lowercased()) ?? false) ||
                 (filterOptions.phoneNumber && contact.phoneNumber?.lowercased().contains(searchText.lowercased()) ?? false) ||
                 (filterOptions.email && contact.email?.lowercased().contains(searchText.lowercased()) ?? false) ||
                 (filterOptions.materialsHandled && contact.materialsHandled?.lowercased().contains(searchText.lowercased()) ?? false) ||
@@ -119,7 +119,7 @@ struct FilterOptions {
     var firstName = true
     var lastName = true
     var address = true
-    var contactType = true
+    var contactStatus = true
     var phoneNumber = true
     var email = true
     var materialsHandled = true
@@ -148,7 +148,7 @@ struct FilterView: View {
                     Toggle("First Name", isOn: $filterOptions.firstName)
                     Toggle("Last Name", isOn: $filterOptions.lastName)
                     Toggle("Address", isOn: $filterOptions.address)
-                    Toggle("Contact Type", isOn: $filterOptions.contactType)
+                    Toggle("Contact Type", isOn: $filterOptions.contactStatus)
                     Toggle("Phone Number", isOn: $filterOptions.phoneNumber)
                     Toggle("Email", isOn: $filterOptions.email)
                     Toggle("Materials Handled", isOn: $filterOptions.materialsHandled)

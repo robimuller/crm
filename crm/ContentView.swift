@@ -8,46 +8,62 @@ struct ContentView: View {
     @State private var selectedContact: Contact?
     @State private var showClearConfirmation = false
     @State private var isDetailViewVisible = false
+    
+    // State for ScaleTicket
+       @State private var selectedScaleTicket: ScaleTicket?
+       @State private var isScaleTicketDetailViewVisible = false
 
 
     var body: some View {
-        HStack(spacing: 0) {
-            Sidebar(selectedView: $selectedView, showClearConfirmation: $showClearConfirmation)
-                .frame(width: 250) // Adjust width as necessary
+            HStack(spacing: 0) {
+                Sidebar(selectedView: $selectedView, showClearConfirmation: $showClearConfirmation)
+                    .frame(width: 250) // Adjust width as necessary
 
-            mainContent
-                .frame(maxWidth: .infinity)
+                mainContent
+                    .frame(maxWidth: .infinity)
 
-            if selectedView == "ListContacts", let selectedContact = selectedContact, isDetailViewVisible {
-                ContactDetailView(contact: selectedContact, isDetailViewVisible: $isDetailViewVisible)
-                    .frame(width: 600)
-                    .transition(.move(edge: .trailing)) // Slides in and out from the right edge
-                    .animation(.easeInOut, value: isDetailViewVisible) // Smooth transition
+                // Contact Detail View
+                if selectedView == "ListContacts", let selectedContact = selectedContact, isDetailViewVisible {
+                    ContactDetailView(contact: selectedContact, isDetailViewVisible: $isDetailViewVisible)
+                        .frame(width: 600)
+                        .transition(.move(edge: .trailing))
+                        .animation(.easeInOut, value: isDetailViewVisible)
+                }
+
+                // ScaleTicket Detail View
+                if selectedView == "ScaleTicket", let selectedTicket = selectedScaleTicket, isScaleTicketDetailViewVisible {
+                    ScaleTicketDetailView(scaleTicket: selectedTicket, isDetailViewVisible: $isScaleTicketDetailViewVisible)
+                        .frame(width: 600)
+                        .transition(.move(edge: .trailing))
+                        .animation(.easeInOut, value: isScaleTicketDetailViewVisible)
+                }
             }
-
-
         }
-    }
 
     var mainContent: some View {
         Group {
             switch selectedView {
             case "RegisterContact":
-                RegisterContactView(contacts: $contacts) // Corrected syntax
+                RegisterContactView(contacts: $contacts)
             case "ListContacts":
                 ContactListView(selectedContact: $selectedContact) { contact in
                     selectedContact = contact
-                    isDetailViewVisible = true // Show the detail view when a contact is selected
+                    isDetailViewVisible = true
                 }
+            case "ScaleTicket":
+                            ScaleTicketView(selectedScaleTicket: $selectedScaleTicket) { scaleTicket in
+                                selectedScaleTicket = scaleTicket
+                                isScaleTicketDetailViewVisible = true
+                            }
             default:
                 Text("Select an action")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .foregroundColor(.white)
-                    .background(Color.orange) // Dark background for the sidebar
-
+                    .background(Color.orange)
             }
         }
     }
+
 
     private func clearAllContacts() {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = ContactEntity.fetchRequest()
@@ -67,6 +83,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-
-// ... Rest of your code including RegisterContactView, ContactDetailView, etc.

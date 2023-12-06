@@ -46,7 +46,7 @@ struct RegisterContactView: View {
         @State private var firstName = ""
         @State private var lastName = ""
         @State private var address = ""
-        @State private var contactType = ""
+        @State private var contactStatus = ""
         @State private var phoneNumber = ""
         @State private var email = ""
         @State private var materialsHandled = ""
@@ -84,7 +84,7 @@ struct RegisterContactView: View {
                 CustomTextField(placeholder: "Keresztnév", text: $firstName.onChange(updateChangeStatus))
                 CustomTextField(placeholder: "Vezetéknév", text: $lastName.onChange(updateChangeStatus))
                 CustomTextField(placeholder: "Cím", text: $address.onChange(updateChangeStatus))
-                CustomTextField(placeholder: "Értékesítő", text: $contactType.onChange(updateChangeStatus))
+                CustomTextField(placeholder: "Értékesítő", text: $contactStatus.onChange(updateChangeStatus))
                 CustomTextField(placeholder: "Telefonszám", text: $phoneNumber.onChange(updateChangeStatus))
                 CustomTextField(placeholder: "Email", text: $email.onChange(updateChangeStatus))
                 CustomTextField(placeholder: "Érdekelt anyagok", text: $materialsHandled.onChange(updateChangeStatus))
@@ -130,7 +130,7 @@ struct RegisterContactView: View {
                 firstName = existingContact.firstName
                 lastName = existingContact.lastName
                 address = existingContact.address
-                contactType = existingContact.contactType
+                contactStatus = existingContact.contactStatus
                 phoneNumber = existingContact.phoneNumber
                 email = existingContact.email
                 materialsHandled = existingContact.materialsHandled
@@ -175,7 +175,7 @@ struct RegisterContactView: View {
         contactEntity.firstName = firstName
         contactEntity.lastName = lastName
         contactEntity.address = address
-        contactEntity.contactType = contactType
+        contactEntity.contactStatus = contactStatus
         contactEntity.phoneNumber = phoneNumber
         contactEntity.email = email
         contactEntity.materialsHandled = materialsHandled
@@ -198,7 +198,7 @@ struct RegisterContactView: View {
         firstName = ""
         lastName = ""
         address = ""
-        contactType = ""
+        contactStatus = ""
         phoneNumber = ""
         email = ""
         materialsHandled = ""

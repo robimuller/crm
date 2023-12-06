@@ -16,7 +16,7 @@ struct ContactDetailView: View {
                         DetailRow(label: "Vezetéknév", value: contact.lastName)
                         DetailRow(label: "Cégnév", value: contact.companyName)
                         DetailRow(label: "Cím", value: contact.address)
-                        DetailRow(label: "Kontakt típusa", value: contact.contactType)
+                        DetailRow(label: "Kapcsolati Státusz", value: contact.contactStatus)
                         DetailRow(label: "Telefonszám", value: contact.phoneNumber)
                         DetailRow(label: "Email", value: contact.email)
                     }
@@ -34,7 +34,6 @@ struct ContactDetailView: View {
                 .shadow(radius: 5)
                 .padding()
             }
-            .navigationTitle(contact.firstName)
             .background(Color.gray.opacity(0.2))
             .frame(maxHeight: .infinity)
 
