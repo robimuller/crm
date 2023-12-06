@@ -11,9 +11,14 @@
 		D0118B782B173D8300E6C3FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118B772B173D8300E6C3FB /* ContentView.swift */; };
 		D0118B7A2B173D8400E6C3FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0118B792B173D8400E6C3FB /* Assets.xcassets */; };
 		D0118B7D2B173D8400E6C3FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0118B7C2B173D8400E6C3FB /* Preview Assets.xcassets */; };
-		D0118B882B173D8400E6C3FB /* crmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118B872B173D8400E6C3FB /* crmTests.swift */; };
-		D0118B922B173D8400E6C3FB /* crmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118B912B173D8400E6C3FB /* crmUITests.swift */; };
-		D0118B942B173D8400E6C3FB /* crmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118B932B173D8400E6C3FB /* crmUITestsLaunchTests.swift */; };
+		D0118BA12B1741BB00E6C3FB /* RegisterContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118BA02B1741BB00E6C3FB /* RegisterContactView.swift */; };
+		D0118BA32B1741E400E6C3FB /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118BA22B1741E400E6C3FB /* ContactListView.swift */; };
+		D0118BA52B1744D500E6C3FB /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118BA42B1744D500E6C3FB /* Contact.swift */; };
+		D0118BA72B174EF100E6C3FB /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0118BA62B174EF100E6C3FB /* ContactDetailView.swift */; };
+		D0AA94C32B18B9C800367433 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0AA94C12B18B9C800367433 /* Model.xcdatamodeld */; };
+		D0AA94C52B18BA5000367433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA94C42B18BA5000367433 /* AppDelegate.swift */; };
+		D0AA94C72B18D0A500367433 /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA94C62B18D0A500367433 /* PersistanceController.swift */; };
+		D0AA94C92B19D5EC00367433 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA94C82B19D5EC00367433 /* Sidebar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,15 +41,20 @@
 /* Begin PBXFileReference section */
 		D0118B722B173D8300E6C3FB /* crm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0118B752B173D8300E6C3FB /* crmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crmApp.swift; sourceTree = "<group>"; };
-		D0118B772B173D8300E6C3FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D0118B772B173D8300E6C3FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		D0118B792B173D8400E6C3FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0118B7C2B173D8400E6C3FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0118B7E2B173D8400E6C3FB /* crm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = crm.entitlements; sourceTree = "<group>"; };
 		D0118B832B173D8400E6C3FB /* crmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = crmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0118B872B173D8400E6C3FB /* crmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crmTests.swift; sourceTree = "<group>"; };
 		D0118B8D2B173D8400E6C3FB /* crmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = crmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0118B912B173D8400E6C3FB /* crmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crmUITests.swift; sourceTree = "<group>"; };
-		D0118B932B173D8400E6C3FB /* crmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crmUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D0118BA02B1741BB00E6C3FB /* RegisterContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterContactView.swift; sourceTree = "<group>"; };
+		D0118BA22B1741E400E6C3FB /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
+		D0118BA42B1744D500E6C3FB /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		D0118BA62B174EF100E6C3FB /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
+		D0AA94C22B18B9C800367433 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		D0AA94C42B18BA5000367433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0AA94C62B18D0A500367433 /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
+		D0AA94C82B19D5EC00367433 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				D0118B742B173D8300E6C3FB /* crm */,
-				D0118B862B173D8400E6C3FB /* crmTests */,
-				D0118B902B173D8400E6C3FB /* crmUITests */,
 				D0118B732B173D8300E6C3FB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,10 +104,18 @@
 			isa = PBXGroup;
 			children = (
 				D0118B752B173D8300E6C3FB /* crmApp.swift */,
+				D0AA94C62B18D0A500367433 /* PersistanceController.swift */,
 				D0118B772B173D8300E6C3FB /* ContentView.swift */,
+				D0118BA42B1744D500E6C3FB /* Contact.swift */,
+				D0118BA62B174EF100E6C3FB /* ContactDetailView.swift */,
+				D0118BA02B1741BB00E6C3FB /* RegisterContactView.swift */,
+				D0118BA22B1741E400E6C3FB /* ContactListView.swift */,
+				D0AA94C82B19D5EC00367433 /* Sidebar.swift */,
 				D0118B792B173D8400E6C3FB /* Assets.xcassets */,
 				D0118B7E2B173D8400E6C3FB /* crm.entitlements */,
 				D0118B7B2B173D8400E6C3FB /* Preview Content */,
+				D0AA94C12B18B9C800367433 /* Model.xcdatamodeld */,
+				D0AA94C42B18BA5000367433 /* AppDelegate.swift */,
 			);
 			path = crm;
 			sourceTree = "<group>";
@@ -110,23 +126,6 @@
 				D0118B7C2B173D8400E6C3FB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		D0118B862B173D8400E6C3FB /* crmTests */ = {
-			isa = PBXGroup;
-			children = (
-				D0118B872B173D8400E6C3FB /* crmTests.swift */,
-			);
-			path = crmTests;
-			sourceTree = "<group>";
-		};
-		D0118B902B173D8400E6C3FB /* crmUITests */ = {
-			isa = PBXGroup;
-			children = (
-				D0118B912B173D8400E6C3FB /* crmUITests.swift */,
-				D0118B932B173D8400E6C3FB /* crmUITestsLaunchTests.swift */,
-			);
-			path = crmUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +258,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0AA94C92B19D5EC00367433 /* Sidebar.swift in Sources */,
 				D0118B782B173D8300E6C3FB /* ContentView.swift in Sources */,
+				D0118BA72B174EF100E6C3FB /* ContactDetailView.swift in Sources */,
 				D0118B762B173D8300E6C3FB /* crmApp.swift in Sources */,
+				D0AA94C52B18BA5000367433 /* AppDelegate.swift in Sources */,
+				D0AA94C32B18B9C800367433 /* Model.xcdatamodeld in Sources */,
+				D0118BA32B1741E400E6C3FB /* ContactListView.swift in Sources */,
+				D0118BA52B1744D500E6C3FB /* Contact.swift in Sources */,
+				D0118BA12B1741BB00E6C3FB /* RegisterContactView.swift in Sources */,
+				D0AA94C72B18D0A500367433 /* PersistanceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +275,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0118B882B173D8400E6C3FB /* crmTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +282,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0118B922B173D8400E6C3FB /* crmUITests.swift in Sources */,
-				D0118B942B173D8400E6C3FB /* crmUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +429,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"crm/Preview Content\"";
+				DEVELOPMENT_TEAM = 4UXAVC9752;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -450,6 +455,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"crm/Preview Content\"";
+				DEVELOPMENT_TEAM = 4UXAVC9752;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -573,6 +579,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D0AA94C12B18B9C800367433 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D0AA94C22B18B9C800367433 /* Model.xcdatamodel */,
+			);
+			currentVersion = D0AA94C22B18B9C800367433 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D0118B6A2B173D8300E6C3FB /* Project object */;
 }
